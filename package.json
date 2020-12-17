@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "npm run prettier:check",
+    "deploy": "node ../server/deploy",
     "start": "nodemon src/index.ts",
     "debug": "ts-node --inspect --compilerOptions '{\"inlineSources\":true}' src/index.ts",
     "start:editor": "webpack-dev-server --config webpack.config.js",
