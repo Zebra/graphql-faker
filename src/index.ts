@@ -24,7 +24,7 @@ parseCLI((options) => {
   const { extendURL, headers, forwardHeaders } = options;
   const fileName =
     options.fileName ||
-    (extendURL ? './schema_extension.faker.graphql' : './schema.faker.graphql');
+    (extendURL ? './schema_extension.faker.graphql' : process.env.GRAPH_SCHEMA);
 
   if (!options.fileName) {
     log(
@@ -175,7 +175,6 @@ function runServer(
   ${chalk.blue('❯')} Interactive Editor: http://localhost:${port}/editor
   ${chalk.blue('❯')} GraphQL API:        http://localhost:${port}/graphql
   ${chalk.blue('❯')} GraphQL Voyager:    http://localhost:${port}/voyager
-
   `);
 
   if (openEditor) {
